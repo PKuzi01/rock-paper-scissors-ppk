@@ -23,8 +23,7 @@ function getPlayersInput() {
 //playing a single round
 function playRound(playersChoice, computerChoice) {
     if (
-        (playersChoice === computerChoice) ||
-        (computerChoice === playersChoice)
+        (playersChoice === computerChoice)
     ) {
         console.log(roundWin = `tie`);
     };
