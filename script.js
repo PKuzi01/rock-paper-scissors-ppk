@@ -46,7 +46,15 @@ function playRound(playersChoice, computerChoice) {
     };
 };
 
+function playGame() {
+   playRound(playersChoice, computerChoice); 
+   playRound(playersChoice, computerChoice); 
+   playRound(playersChoice, computerChoice); 
+   playRound(playersChoice, computerChoice); 
+   playRound(playersChoice, computerChoice); 
+};
+console.log(playGame());
 
 let playersChoice = getPlayersInput();
 let computerChoice = getComputerInput();
-playRound(playersChoice, computerChoice);
+//playRound(playersChoice, computerChoice);
