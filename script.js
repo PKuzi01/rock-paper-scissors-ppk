@@ -1,31 +1,34 @@
+//global vars
 let options = ["rock", "paper", "scissors"];
 let roundWin = ``;
-// console.log(options);
 
 //getting the PC's input
 function getComputerInput() {
     let computerInput = options[Math.floor(Math.random() * 3)];
-     console.log(`Computer picked: ${computerInput}`);
+     return computerInput;
 };
-
-let computerChoice = getComputerInput();
 
 //getting the player's input
 function getPlayersInput() {
     let playersInput = prompt(`Rock, paper or scissors?`);
     playersInput = playersInput.toLowerCase();
     if (playersInput === `paper` || playersInput === `rock` || playersInput === `scissors`) {
-        console.log(`You picked: ${playersInput.toLowerCase()}`);
+        return playersInput;
     } else {
         prompt(`Error: please enter a correct value.`)
     };
     
 };
 
-let playersChoice = getPlayersInput();
-
 //playing a single round
 function playRound(playersChoice, computerChoice) {
+    if (
+        (playersChoice === computerChoice) ||
+        (computerChoice === playersChoice)
+    ) {
+        console.log(roundWin = `tie`);
+    };
+
     if (
         (playersChoice === `rock` && computerChoice === `scissors`) ||
         (playersChoice === `scissors` && computerChoice === `paper`) ||
@@ -41,10 +44,9 @@ function playRound(playersChoice, computerChoice) {
     ) {
         console.log(roundWin = `computer`);
     };
-
-
 };
 
 
-
-console.log(playRound(playersChoice, computerChoice));
+let playersChoice = getPlayersInput();
+let computerChoice = getComputerInput();
+playRound(playersChoice, computerChoice);
