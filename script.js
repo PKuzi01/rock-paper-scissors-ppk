@@ -18,3 +18,11 @@ function getPlayersInput() {
     };
     
 };
+
+//playing the game
+function playingGame(playersChoice, computerChoice) {
+    let playersChoice = getPlayersInput();
+    console.log(playersChoice);
+    let computerChoice = getComputerInput();
+    console.log(computerChoice);
+};
