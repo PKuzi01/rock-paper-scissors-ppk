@@ -8,3 +8,13 @@ function getComputerInput() {
 };
 
 //getting the player's input
+function getPlayersInput() {
+    let playersInput = prompt("Rock, paper or scissors?");
+    
+    if (playersInput === 'paper' || playersInput === 'rock' || playersInput === 'scissors') {
+        console.log(`You picked: ${playersInput.toLowerCase()}`);
+    } else {
+        prompt(`Error: please enter a correct value.`)
+    };
+    
+};
