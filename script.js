@@ -21,7 +21,10 @@ function getPlayersInput() {
 };
 
 //playing a single round
-function playRound(playersChoice, computerChoice) {
+function playRound() {
+    let playersChoice = getPlayersInput();
+    let computerChoice = getComputerInput();
+
     if (
         (playersChoice === computerChoice)
     ) {
@@ -45,15 +48,14 @@ function playRound(playersChoice, computerChoice) {
     };
 };
 
+//playing the game
 function playGame() {
-   playRound(playersChoice, computerChoice); 
-   playRound(playersChoice, computerChoice); 
-   playRound(playersChoice, computerChoice); 
-   playRound(playersChoice, computerChoice); 
-   playRound(playersChoice, computerChoice); 
+   playRound(); 
+   playRound(); 
+   playRound(); 
+   playRound(); 
+   playRound(); 
 };
-console.log(playGame());
 
-let playersChoice = getPlayersInput();
-let computerChoice = getComputerInput();
-//playRound(playersChoice, computerChoice);
+
+console.log(playGame());
