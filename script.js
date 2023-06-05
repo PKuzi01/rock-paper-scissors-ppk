@@ -28,7 +28,7 @@ function playRound() {
     if (
         (playersChoice === computerChoice)
     ) {
-        console.log(roundWin = `tie`);
+        return roundWin = `tie`;
     };
 
     if (
@@ -36,7 +36,7 @@ function playRound() {
         (playersChoice === `scissors` && computerChoice === `paper`) ||
         (playersChoice === `paper` && computerChoice === `rock`)
   ) { 
-        console.log(roundWin = `player`);
+        return roundWin = `player`;
     };
 
     if (
@@ -44,18 +44,22 @@ function playRound() {
         (computerChoice === `scissors` && playersChoice === `paper`) ||
         (computerChoice === `paper` && playersChoice === `rock`)
     ) {
-        console.log(roundWin = `computer`);
+        return roundWin = `computer`;
     };
 };
 
 //playing the game
 function playGame() {
-   playRound(); 
-   playRound(); 
-   playRound(); 
-   playRound(); 
-   playRound(); 
+    let displayResults = document.querySelector(`#displayResults`);
+   for (x = 1; x <= 5; x++) {
+    //find a way to print every result out
+    displayResults.innerHTML = playRound();
+   };
 };
 
+//global
+ let gameButton = document.querySelector(`#playGame`);
+ gameButton.addEventListener("click", playGame)
 
-console.log(playGame());
+
+playGame();
