@@ -51,15 +51,14 @@ function playRound() {
 //playing the game
 function playGame() {
     let displayResults = document.querySelector(`#displayResults`);
-   for (x = 1; x <= 5; x++) {
-    //find a way to print every result out
-    displayResults.innerHTML = playRound();
-   };
+    for (x = 1; x <= 5; x++) {
+    return  displayResults.innerHTML = playRound();
+    }; 
+
 };
 
 //global
- let gameButton = document.querySelector(`#playGame`);
- gameButton.addEventListener("click", playGame)
-
+let gameButton = document.querySelector(`#playGame`);
+gameButton.addEventListener("click", playGame)
 
 playGame();
