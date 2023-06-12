@@ -31,7 +31,7 @@
 
 ### <ins>Project Entries</ins>
 #### 12 June 2021
-I spent most of my day researching, writing up a breakdown, wireframing and setting up the project so taht production is a lot smoother. I thought doing something like that would take a lot longer. I figure it would if it were a bigger project but my persepective's change don how far you can get if you focus enough. The hack lies in controlled noise, and todays controlled noise of choice is watching Daria from start to finish. I think I'm most excited for the styling, but I also am curious on how I'll do on the behavioural build of the project. I hope I can exhibit what i've learned on JavaScript.
+I spent most of my day researching, writing up a breakdown, wireframing and setting up the project so that production is a lot smoother. I thought doing something like that would take a lot longer, but it didn't, at least for this project. I figure it would take longer if it were a bigger project but my persepective has changed on how far you can get if you had a channelled focus. The hack lies in controlled noise, and todays controlled noise of choice is watching Daria, although I did forget to take some breaks. I think I'm most excited for the styling, but I'm curious on how I'll do on the behavioural build of the project. I hope I can exhibit what I've learned on JavaScript.
 
 
 ### <ins>Overall:</ins>
