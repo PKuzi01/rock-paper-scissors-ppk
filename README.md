@@ -18,9 +18,13 @@
 * @media: for responsive work
 * Resource list:
 [Choret Fudyng Bubble Font by Alit Design](https://www.fontspace.com/choret-fudyng-bubble-font-f96952)
+
 [Retrofunk Script (Personal Use) Font by HPTypework](https://www.fontspace.com/retrofunk-script-font-f35078)
+
 [R-P-S Dark Theme Colour Palette](https://coolors.co/291b2c-6b2b75-b579bf-9954c4-b482d5)
+
 [R-P-S Light Theme Colours Palette](https://coolors.co/e34f6a-e69bb1-d1778e-e2b1b1-f19cdc)
+
 [FontAwesome](https://fontawesome.com/icons)
 
 #### JS
