@@ -1,0 +1,27 @@
+/* Styling Constants */
+:root {
+    --light-mode-color-1: #f19cdc;
+    --light-mode-color-2: #e2b1b1;
+    --light-mode-color-3: #d1778e;
+    --light-mode-color-4: #e34f6a;
+    --light-mode-color-5: #e69bb1;
+    --dark-mode-color-1: #291b2c;
+    --dark-mode-color-2: #6b2b75;
+    --dark-mode-color-3: #b579bf;
+    --dark-mode-color-4: #9954c4;
+    --dark-mode-color-5: #b482d5;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'choret-fudyng-bubble';
+    src: url(./fonts/choret-fudyng-bubble/choret-fudyng-bubble.ttf) format('truetype');
+    src: url(./fonts/choret-fudyng-bubble/choret-fudyng-bubble.woff) format('woff');
+    src: url(./fonts/choret-fudyng-bubble/choret-fudyng-bubble.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'retrofunk-script';
+    src: url(./fonts/retrofunk-script/retrofunk-script.ttf) format('truetype');
+    src: url(./fonts/retrofunk-script/retrofunk-script.woff) format('woff');
+    src: url(./fonts/retrofunk-script/retrofunk-script.woff2) format('woff2');
+}
