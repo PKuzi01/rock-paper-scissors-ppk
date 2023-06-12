@@ -51,6 +51,7 @@ function playRound() {
 //playing the game
 function playGame() {
     let displayResults = document.querySelector(`#displayResults`);
+    //figure out how you would print each result under the other
     for (x = 1; x <= 5; x++) {
     return  displayResults.innerHTML = playRound();
     }; 
