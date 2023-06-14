@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'retrofunk-script';
+  src: url(./retrofunk-script.woff) format('woff'),
+       url(./retrofunk-script.woff2) format('woff2'),
+       url(./retrofunk-script.ttf) format('truetype');
+}

@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'choret-fudyng-bubble';
+  src: url(./choret-fudyng-bubble.woff) format('woff'),
+       url(./choret-fudyng-bubble.woff2) format('woff2');
+}
