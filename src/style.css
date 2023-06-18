@@ -25,3 +25,8 @@
     src: url(./fonts/retrofunk-script/retrofunk-script.woff) format('woff');
     src: url(./fonts/retrofunk-script/retrofunk-script.woff2) format('woff2');
 }
+
+.button {
+    color: white;
+    background: blue;
+}
