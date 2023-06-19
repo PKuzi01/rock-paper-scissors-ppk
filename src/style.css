@@ -1,17 +1,3 @@
-/* Styling Constants */
-:root {
-    --light-mode-color-1: #f19cdc;
-    --light-mode-color-2: #e2b1b1;
-    --light-mode-color-3: #d1778e;
-    --light-mode-color-4: #e34f6a;
-    --light-mode-color-5: #e69bb1;
-    --dark-mode-color-1: #291b2c;
-    --dark-mode-color-2: #6b2b75;
-    --dark-mode-color-3: #b579bf;
-    --dark-mode-color-4: #9954c4;
-    --dark-mode-color-5: #b482d5;
-}
-
 /* Fonts */
 @font-face {
     font-family: 'choret-fudyng-bubble';
@@ -26,7 +12,153 @@
     src: url(./fonts/retrofunk-script/retrofunk-script.woff2) format('woff2');
 }
 
-.button {
-    color: white;
-    background: blue;
+/* Styling Constants */
+:root {
+    --light-mode-color-1: #b32740;
+    --light-mode-color-2: #e2b1b1;
+    --light-mode-color-3: #d1778e;
+    --light-mode-color-4: #e34f6a;
+    --light-mode-color-5: #e69bb1;
+    --light-mode-box-shadow: 5px 5px #e34f6a;
+    --light-mode-text-shadow: 1px 1px #e2b1b1;
+    --dark-mode-color-1: #291b2c;
+    --dark-mode-color-2: #6b2b75;
+    --dark-mode-color-3: #b579bf;
+    --dark-mode-color-4: #9954c4;
+    --dark-mode-color-5: #b482d5;
+    --section-margin: 30px auto;
+    --button-padding: 15px 15px;
+    --button-border: solid 2px;
+    --button-border-radius: 15px;
+    --button-font-size: 18px;
+    --heading-font: choret-fudyng-bubble;
+    --text-font: retrofunk-script;
+    --letter-spacing: 1.5px;
+
 }
+
+/* Light Mode (BARBIE) */
+body {
+    background: var(--light-mode-color-3);
+}
+
+#button {
+    text-align: center;
+    margin: var(--section-margin);
+}
+
+#hero {
+    text-align: center;
+    margin: var(--section-margin);
+}
+
+#hero > h3, h2 {
+    font-family: var(--text-font);
+    letter-spacing: var(--letter-spacing);
+    text-shadow: var(--light-mode-text-shadow);
+    color: var(--light-mode-color-1);
+    margin: 5px;
+}
+
+#hero > h1 {
+    font-family: var(--heading-font);
+    letter-spacing: var(--letter-spacing);
+    text-shadow: var(--light-mode-text-shadow);
+    color: var(--light-mode-color-1);
+    font-size: 40px;
+    margin: 5px;
+}
+
+#gameboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+#gameboard > .gameButtons {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 30px 50px;
+    gap: 15px;
+}
+
+#gameboard > .gameButtons > .option {
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+}
+
+#gameboard > .viewboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin: var(--section-margin)
+}
+
+#gameboard > .viewboard > .contender {
+    font-size: var(--button-font-size);
+    font-family: var(--text-font);
+    text-shadow: var(--light-mode-text-shadow);
+    color: var(--light-mode-color-1);
+}
+
+#result {
+    text-align: center;
+    margin: var(--section-margin);
+}
+
+#result > .results {
+    font-size: 20px;
+    font-family: var(--text-font);
+    text-shadow: var(--light-mode-text-shadow);
+    color: var(--light-mode-color-1);
+}
+
+#restart {
+    text-align: center;
+    margin: var(--section-margin);
+}
+
+#restart > .restartButton {
+    border-radius: var(--button-border-radius);
+    padding: var(--button-padding);
+}
+
+#footer {
+    text-align: center;
+    margin: var(--section-margin);
+}
+
+#footer > .footer {
+    color: var(--light-mode-color-1);
+
+}
+
+#footer > .footer > a {
+    text-decoration: none;
+    color: var(--light-mode-color-1);
+    text-shadow: var(--light-mode-text-shadow);
+}
+
+#footer > .footer > a:hover {
+    text-decoration: underline;
+}
+
+.button, .option, .restartButton {
+    padding: var(--button-padding);
+    border: var(--button-border);
+    border-radius: var(--button-border-radius);
+    box-shadow: var(--light-mode-box-shadow);
+    font-size: var(--button-font-size);
+    font-family: var(--text-font);
+    color: var(--light-mode-color-4);
+    background-color: var(--light-mode-color-2);
+    letter-spacing: var(--letter-spacing);
+    transition: all 150ms ease-in-out;
+}
+
+.button:hover, .option:hover, .restartButton:hover {
+    color: var(--light-mode-color-2);
+    background-color: var(--light-mode-color-4);
+}
+
+/* Dark Mode */
