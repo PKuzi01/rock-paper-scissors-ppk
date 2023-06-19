@@ -35,7 +35,7 @@ let footer = document.getElementById(`footer`);
     footer.innerHTML = 
     `<footer class="footer"> 
     Made by
-    <a href="https://github.com/PKuzi01" target="_blank">Philisizwe Kuzwayo</a>,
+    <a href="https://www.linkedin.com/in/philisizwe-kuzwayo-3116541a8/" target="_blank">Philisizwe Kuzwayo</a>,
     hosted on
     <a href="https://pkuzi01.github.io/rock-paper-scissors-ppk/"
     target="_blank">Github Pages</a>,
