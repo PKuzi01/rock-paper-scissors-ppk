@@ -16,9 +16,9 @@ let gameboard = document.getElementById(`gameboard`);
     <button class="option">Scissors</button>
     </div>
     <div class="viewboard"> 
-    <i class="fa-solid fa-user user"></i>
+    <i class="fa-solid fa-user user" id="icon-player"></i>
     <p class="contender">Player</p>
-    <i class="fa-solid fa-user user"></i>
+    <i class="fa-solid fa-user user" id="icon-pc"></i>
     <p class="contender">PC</p>
     </div>`;
 
@@ -54,14 +54,25 @@ function changeTheme() {
 let themeButton = document.querySelector('.button');
 themeButton.addEventListener('click', changeTheme);
 
-let rock = `<i class="fa-regular fa-hand-back-fist user"></i>`
-let paper = `<i class="fa-regular fa-hand user"></i>`
-let scissors = `<i class="fa-regular fa-hand-peace user"></i>`
-
 //functionality build
-let options = ['rock', 'paper', 'scissors']
+let options = ['rock', 'paper', 'scissors'];
+let rockIcon = `<i class="fa-regular fa-hand-back-fist user" id="icon"></i>`; //rock icon
+let paperIcon = `<i class="fa-regular fa-hand user" id="icon"></i>`; //paper icon
+let scissorsIcon = `<i class="fa-regular fa-hand-peace user" id="icon"></i>`; //scissor icon
 
 function getPCInput() {
+    let iconPC = document.querySelector('#icon-pc');
     let pcInput = options[Math.floor(Math.random() * 3)];
+    // debugger;
     console.log(pcInput);
+    if (pcInput == options[0]) {
+        iconPC.innerHTML = rockIcon;
+    } else if (pcInput == options[1]) {
+        iconPC.innerHTML = paperIcon;
+    } else if (pcInput == options[2]) {
+        iconPC.innerHTML = scissorsIcon;
+    }
+    return pcInput;
 }
+
+getPCInput();
