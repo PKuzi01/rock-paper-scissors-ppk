@@ -36,6 +36,9 @@ I spent most of my day researching, writing up a breakdown, wireframing and sett
 #### 19 June 2023
 Finally got started on the building! I got intimidated by the JavaScript, because I was trying go for the most sophisticated way of adding elements through JavaScript, which is admirable, but, girl, note to self: KEEP IT SIMPLE!! Get used to it, test the waters. Anyway. I had fun with the styling. It's giving bubblegum, country star, on-the-road Barbie, and I am having the time of my life! Next, I build the functionality for the dark and light mode (the toggle of the button), and then style it. And I have a feeling it's gonna give Starfire's older sister. I am excited. Overall, really good build day.
 
+#### 20 June 2023
+I built the dark theme for the site, and dare I say, very Starfire's older sister! I'm so excited for it, it looks so cool. I also started with building the JavaScript for the page and, boy oh boy, I may need to script this thing out first before I try wing it with my head. I often work well with a guideline, and the only guidline I have is an old build that was created around very different conditions. I will say though, I feel more confident with tackling JavaScript than I did before, and that gives me a feeling of relief. I know it's gonna be a frustraing build but I know I'll do well if I'm paitient with myself. I got this, I just need to know my limits, and take it step by step. I must exercise patience.
+
 
 ### <ins>Overall:</ins>
 * Rating: /10
