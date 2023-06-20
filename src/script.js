@@ -16,10 +16,14 @@ let gameboard = document.getElementById(`gameboard`);
     <button class="option">Scissors</button>
     </div>
     <div class="viewboard"> 
-    <i class="fa-solid fa-user user" id="icon-player"></i>
-    <p class="contender">Player</p>
-    <i class="fa-solid fa-user user" id="icon-pc"></i>
-    <p class="contender">PC</p>
+        <div id="player" class="player">
+            <i class="fa-solid fa-user user" id="icon-player"></i>
+            <p class="contender">Player</p>
+        </div>
+        <div id="pc" class="pc">
+            <i class="fa-solid fa-user user" id="icon-pc"></i>
+            <p class="contender">PC</p>
+        </div>
     </div>`;
 
 //result
@@ -55,6 +59,7 @@ let themeButton = document.querySelector('.button');
 themeButton.addEventListener('click', changeTheme);
 
 //functionality build
+//global variables
 let options = ['rock', 'paper', 'scissors'];
 let rockIcon = `<i class="fa-regular fa-hand-back-fist user" id="icon"></i>`; //rock icon
 let paperIcon = `<i class="fa-regular fa-hand user" id="icon"></i>`; //paper icon
@@ -75,4 +80,5 @@ function getPCInput() {
     return pcInput;
 }
 
+//calling
 getPCInput();

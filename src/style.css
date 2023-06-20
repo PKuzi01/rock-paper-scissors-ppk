@@ -73,13 +73,13 @@ body {
 
 #gameboard {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
 
 }
 
 #gameboard > .gameButtons {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     margin: 30px 70px;
     gap: 15px;
 }
@@ -92,19 +92,45 @@ body {
 
 #gameboard > .viewboard {
     display: grid;
-    grid-template-columns: 1fr;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     margin: var(--section-margin);
 }
 
-#gameboard > .viewboard > .contender {
+.viewboard > .player {
+    text-align: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+}
+
+.viewboard > .player > .contender {
     font-size: 30px;
     font-family: var(--text-font);
     text-shadow: var(--light-mode-text-shadow);
     color: var(--light-mode-color-1);
 }
 
-#gameboard > .viewboard > .user {
+.viewboard > .player > .user {
+    font-size: 100px;
+    margin: 30px auto;
+    color: var(--light-mode-color-1);
+}
+
+.viewboard > .pc {
+    text-align: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+}
+
+.viewboard > .pc > .contender {
+    font-size: 30px;
+    font-family: var(--text-font);
+    text-shadow: var(--light-mode-text-shadow);
+    color: var(--light-mode-color-1);
+}
+
+.viewboard > .pc > .user {
     font-size: 100px;
     margin: 30px auto;
     color: var(--light-mode-color-1);
