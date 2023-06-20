@@ -80,12 +80,13 @@ body {
 #gameboard > .gameButtons {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 30px 50px;
+    margin: 30px 70px;
     gap: 15px;
 }
 
 #gameboard > .gameButtons > .option {
     padding: var(--button-padding);
+    margin: 20px 30px;
     border-radius: var(--button-border-radius);
 }
 
@@ -93,13 +94,19 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
-    margin: var(--section-margin)
+    margin: var(--section-margin);
 }
 
 #gameboard > .viewboard > .contender {
-    font-size: var(--button-font-size);
+    font-size: 30px;
     font-family: var(--text-font);
     text-shadow: var(--light-mode-text-shadow);
+    color: var(--light-mode-color-1);
+}
+
+#gameboard > .viewboard > .user {
+    font-size: 100px;
+    margin: 30px auto;
     color: var(--light-mode-color-1);
 }
 
@@ -181,6 +188,12 @@ body {
 .dark #gameboard > .viewboard > .contender {
     color: var(--dark-mode-color-5);
     text-shadow: var(--dark-mode-text-shadow);
+}
+
+.dark #gameboard > .viewboard > .user {
+    font-size: 100px;
+    margin: 30px auto;
+    color: var(--dark-mode-color-5);
 }
 
 .dark #result > .results {
