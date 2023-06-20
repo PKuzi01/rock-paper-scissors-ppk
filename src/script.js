@@ -16,7 +16,9 @@ let gameboard = document.getElementById(`gameboard`);
     <button class="option">Scissors</button>
     </div>
     <div class="viewboard"> 
+    <i class="fa-solid fa-user user"></i>
     <p class="contender">Player</p>
+    <i class="fa-solid fa-user user"></i>
     <p class="contender">PC</p>
     </div>`;
 
@@ -51,3 +53,15 @@ function changeTheme() {
 
 let themeButton = document.querySelector('.button');
 themeButton.addEventListener('click', changeTheme);
+
+let rock = `<i class="fa-regular fa-hand-back-fist user"></i>`
+let paper = `<i class="fa-regular fa-hand user"></i>`
+let scissors = `<i class="fa-regular fa-hand-peace user"></i>`
+
+//functionality build
+let options = ['rock', 'paper', 'scissors']
+
+function getPCInput() {
+    let pcInput = options[Math.floor(Math.random() * 3)];
+    console.log(pcInput);
+}
