@@ -26,6 +26,8 @@
     --dark-mode-color-3: #b579bf;
     --dark-mode-color-4: #9954c4;
     --dark-mode-color-5: #b482d5;
+    --dark-mode-box-shadow: 5px 5px #b579bf;
+    --dark-mode-text-shadow: 1px 1px #6b2b75;
     --section-margin: 30px auto;
     --button-padding: 15px 15px;
     --button-border: solid 2px;
@@ -162,3 +164,51 @@ body {
 }
 
 /* Dark Mode */
+.dark {
+    background: var(--dark-mode-color-1);
+}
+
+.dark #hero > h3, .dark #hero > h2 {
+    color: var(--dark-mode-color-5);
+    text-shadow: var(--dark-mode-text-shadow);
+}
+
+.dark #hero > h1 {
+    color: var(--dark-mode-color-5);
+    text-shadow: var(--dark-mode-text-shadow);
+}
+
+.dark #gameboard > .viewboard > .contender {
+    color: var(--dark-mode-color-5);
+    text-shadow: var(--dark-mode-text-shadow);
+}
+
+.dark #result > .results {
+    color: var(--dark-mode-color-5);
+    text-shadow: var(--dark-mode-text-shadow);
+}
+
+.dark #footer > .footer {
+    color: var(--dark-mode-color-5)
+}
+
+.dark #footer > .footer > a {
+    text-decoration: none;
+    color: var(--dark-mode-color-5);
+    text-shadow: var(--dark-mode-text-shadow);
+}
+
+.dark #footer > .footer > a:hover {
+    text-decoration: underline;
+}
+
+.dark .button, .dark .option, .dark .restartButton {
+    color: var(--dark-mode-color-3);
+    background-color: var(--dark-mode-color-2);
+    box-shadow: var(--dark-mode-box-shadow);
+}
+
+.dark .button:hover, .dark .option:hover, .dark .restartButton:hover {
+    color: var(--dark-mode-color-2);
+    background-color: var(--dark-mode-color-3);
+}

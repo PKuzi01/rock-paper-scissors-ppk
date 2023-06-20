@@ -1,4 +1,4 @@
-//button
+//theme button
 let btn = document.getElementById(`button`);
     btn.innerHTML = `<button class="button">Dark/Light Theme</button>`;
 //hero
@@ -41,4 +41,13 @@ let footer = document.getElementById(`footer`);
     target="_blank">Github Pages</a>,
     and is open-sourced on
     <a href="https://github.com/PKuzi01/rock-paper-scissors-ppk" target="_blank">Github</a>.
-    </footer>`
+    </footer>`;
+
+//chanigng the page from dark to light mode, and vice versa
+function changeTheme() {
+    let body = document.querySelector('body');
+    body.classList.toggle('dark')
+}
+
+let themeButton = document.querySelector('.button');
+themeButton.addEventListener('click', changeTheme);
