@@ -98,4 +98,3 @@ function showPlayerInput(button, icon) {
 
 
 //calling
-getPCInput();

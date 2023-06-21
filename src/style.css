@@ -292,6 +292,7 @@ body {
     #gameboard > .viewboard {
         grid-template-columns: 1fr;
         gap: 10px;
+        margin: auto;
     }
 
     #result {
