@@ -343,7 +343,7 @@ body {
     }
 }
 
-@media (max-width: 790px) {
+@media (max-width: 800px) {
     #gameboard > .gameButtons {
         margin: auto 30px;
     }
