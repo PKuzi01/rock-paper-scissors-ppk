@@ -84,6 +84,12 @@ function showPlayerInput(button, icon) {
     button.addEventListener('click', function() {
       const iconPlayer = document.querySelector('#icon-player');
       iconPlayer.setAttribute('class', icon);
+
+    let pcChoice = getPCInput();
+    let playerChoice = button.id.replace("-button", "");
+
+    let result = playRound(playerChoice, pcChoice);
+    return result;
     });
   }
   
@@ -95,5 +101,18 @@ function showPlayerInput(button, icon) {
   showPlayerInput(paperButton, `${paperIcon}`);
   showPlayerInput(scissorsButton, `${scissorsIcon}`);
 
-
+//playing one round
+function playRound(playerChoice, pcChoice) {
+    if (playerChoice === pcChoice) {
+      console.log("It's a tie!");
+    } else if (
+      (playerChoice === "rock" && pcChoice === "scissors") ||
+      (playerChoice === "paper" && pcChoice === "rock") ||
+      (playerChoice === "scissors" && pcChoice === "paper")
+    ) {
+      console.log("You win!");
+    } else {
+      console.log("You lose!");
+    }
+  }
 //calling
