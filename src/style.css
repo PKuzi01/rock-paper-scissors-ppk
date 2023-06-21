@@ -220,7 +220,6 @@ body {
 }
 
 .dark .viewboard > .player > .user {
-    font-size: 100px;
     margin: 30px auto;
     color: var(--dark-mode-color-5);
 }
@@ -329,6 +328,16 @@ body {
     }
 
     .viewboard > .pc > .user {
+        font-size: 50px;
+        margin: 18px auto;
+    }
+
+    .dark .viewboard > .player > .user {
+        font-size: 50px;
+        margin: 18px auto;
+    }
+
+    .dark  .viewboard > .pc > .user {
         font-size: 50px;
         margin: 18px auto;
     }

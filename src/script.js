@@ -79,7 +79,6 @@ function getPCInput() {
     return pcInput;
 }
 
-
 //player's choice
 function showPlayerInput(button, icon) {
     button.addEventListener('click', function() {
