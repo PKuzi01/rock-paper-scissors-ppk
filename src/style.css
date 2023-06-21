@@ -74,7 +74,6 @@ body {
 #gameboard {
     display: grid;
     grid-template-columns: 1fr;
-
 }
 
 #gameboard > .gameButtons {
@@ -96,44 +95,6 @@ body {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     margin: var(--section-margin);
-}
-
-.viewboard > .player {
-    text-align: center;
-    padding: 15px 15px;
-    margin: 15px 15px;
-}
-
-.viewboard > .player > .contender {
-    font-size: 30px;
-    font-family: var(--text-font);
-    text-shadow: var(--light-mode-text-shadow);
-    color: var(--light-mode-color-1);
-}
-
-.viewboard > .player > .user {
-    font-size: 100px;
-    margin: 30px auto;
-    color: var(--light-mode-color-1);
-}
-
-.viewboard > .pc {
-    text-align: center;
-    padding: 15px 15px;
-    margin: 15px 15px;
-}
-
-.viewboard > .pc > .contender {
-    font-size: 30px;
-    font-family: var(--text-font);
-    text-shadow: var(--light-mode-text-shadow);
-    color: var(--light-mode-color-1);
-}
-
-.viewboard > .pc > .user {
-    font-size: 100px;
-    margin: 30px auto;
-    color: var(--light-mode-color-1);
 }
 
 #result {
@@ -176,6 +137,48 @@ body {
 
 #footer > .footer > a:hover {
     text-decoration: underline;
+}
+
+.container {
+    max-width: 100;
+}
+
+.viewboard > .player {
+    text-align: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+}
+
+.viewboard > .player > .contender {
+    font-size: 30px;
+    font-family: var(--text-font);
+    text-shadow: var(--light-mode-text-shadow);
+    color: var(--light-mode-color-1);
+}
+
+.viewboard > .player > .user {
+    font-size: 100px;
+    margin: 30px auto;
+    color: var(--light-mode-color-1);
+}
+
+.viewboard > .pc {
+    text-align: center;
+    padding: 15px 15px;
+    margin: 15px 15px;
+}
+
+.viewboard > .pc > .contender {
+    font-size: 30px;
+    font-family: var(--text-font);
+    text-shadow: var(--light-mode-text-shadow);
+    color: var(--light-mode-color-1);
+}
+
+.viewboard > .pc > .user {
+    font-size: 100px;
+    margin: 30px auto;
+    color: var(--light-mode-color-1);
 }
 
 .button, .option, .restartButton {
@@ -228,7 +231,7 @@ body {
 }
 
 .dark .viewboard > .pc > .user {
-    font-
+    font-size: 30px;
     size: 100px;
     margin: 30px auto;
     color: var(--dark-mode-color-5);
@@ -263,3 +266,72 @@ body {
     color: var(--dark-mode-color-2);
     background-color: var(--dark-mode-color-3);
 }
+
+@media (max-width: 450px) {
+
+    #button > .button {
+        padding: 8px;
+    }
+
+    #hero {
+        margin: 10px auto;
+    }
+
+    #gameboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #gameboard > .gameButtons{
+        grid-template-columns: 1fr;
+        margin: 15px auto;
+    }
+
+    #gameboard > .gameButtons > .option {
+        margin: 10px ;
+        padding: 8px;
+    }
+
+    #gameboard > .viewboard {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #result {
+        margin: 10px auto;
+    }
+
+    #restart> .restartButton {
+        padding: 8px;
+    }
+
+    .viewboard > .player {
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .viewboard > .pc {
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .viewboard > .player > .contender {
+        font-size: 18px;
+        margin: 10px auto;
+    }
+
+    .viewboard > .pc > .contender {
+        font-size: 18px;
+        margin: 10px auto;
+    }
+
+    .viewboard > .player > .user {
+        font-size: 50px;
+        margin: 18px auto;
+    }
+
+    .viewboard > .pc > .user {
+        font-size: 50px;
+        margin: 18px auto;
+    }
+}
+    
