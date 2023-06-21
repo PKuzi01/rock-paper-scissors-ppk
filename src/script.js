@@ -79,22 +79,22 @@ function getPCInput() {
     return pcInput;
 }
 
-let iconPlayer = document.querySelector('#icon-player');
 
-let rockButton = document.getElementById('rock-button');
-rockButton.addEventListener('click', function() {
-    iconPlayer.setAttribute('class', `${rockIcon}`);
-});
-
-let paperButton = document.getElementById('paper-button');
-paperButton.addEventListener('click', function() {
-    iconPlayer.setAttribute('class', `${paperIcon}`);
-});
-
-let scissorsButton = document.getElementById('scissors-button');
-scissorsButton.addEventListener('click', function () {
-    iconPlayer.setAttribute('class', `${scissorsIcon}`);
-});
+//player's choice
+function showPlayerInput(button, icon) {
+    button.addEventListener('click', function() {
+      const iconPlayer = document.querySelector('#icon-player');
+      iconPlayer.setAttribute('class', icon);
+    });
+  }
+  
+  let rockButton = document.getElementById('rock-button');
+  let paperButton = document.getElementById('paper-button');
+  let scissorsButton = document.getElementById('scissors-button');
+  
+  showPlayerInput(rockButton, `${rockIcon}`);
+  showPlayerInput(paperButton, `${paperIcon}`);
+  showPlayerInput(scissorsButton, `${scissorsIcon}`);
 
 
 //calling
