@@ -61,21 +61,20 @@ themeButton.addEventListener('click', changeTheme);
 //functionality build
 //global variables
 let options = ['rock', 'paper', 'scissors'];
-let rockIcon = `<i class="fa-regular fa-hand-back-fist user" id="icon"></i>`; //rock icon
-let paperIcon = `<i class="fa-regular fa-hand user" id="icon"></i>`; //paper icon
-let scissorsIcon = `<i class="fa-regular fa-hand-peace user" id="icon"></i>`; //scissor icon
+let rockIcon = `fa-regular fa-hand-back-fist user`; //rock icon
+let paperIcon = `fa-regular fa-hand user`; //paper icon
+let scissorsIcon = `fa-regular fa-hand-peace user`; //scissor icon
 
 function getPCInput() {
     let iconPC = document.querySelector('#icon-pc');
     let pcInput = options[Math.floor(Math.random() * 3)];
-    // debugger;
     console.log(pcInput);
-    if (pcInput == options[0]) {
-        iconPC.innerHTML = rockIcon;
-    } else if (pcInput == options[1]) {
-        iconPC.innerHTML = paperIcon;
-    } else if (pcInput == options[2]) {
-        iconPC.innerHTML = scissorsIcon;
+    if (pcInput === options[0]) {
+        iconPC.setAttribute('class', `${rockIcon}`);
+    } else if (pcInput === options[1]) {
+        iconPC.setAttribute('class', `${paperIcon}`);
+    } else if (pcInput === options[2]) {
+        iconPC.setAttribute('class', `${scissorsIcon}`);
     }
     return pcInput;
 }
