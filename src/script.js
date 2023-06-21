@@ -34,7 +34,7 @@ let results = document.getElementById(`result`);
 //restart
 let restartButton = document.getElementById(`restart`);
     restartButton.innerHTML =
-    `<button class="restartButton">Restart game</button>`;
+    `<button class="restartButton" id="restartButton">Restart game</button>`;
 
 //footer
 let footer = document.getElementById(`footer`);
@@ -83,6 +83,8 @@ function getPCInput() {
 //player's choice
 let playerPoints = 0;
 let pcPoints = 0;
+let currentRound = 1;
+let maxRound = 5;
 
 function showPlayerInput(button, icon) {
     button.addEventListener('click', function() {
@@ -98,11 +100,11 @@ function showPlayerInput(button, icon) {
     pcPoints = updateScore(result, pcPoints);
 
     let pcScore = document.getElementById('pcScore');
-    pcScore.textContent = `PC: ${pcPoints}`;
+    pcScore.innerHTML = `PC: ${pcPoints}`;
     let playerScore = document.getElementById('playerScore');
-    playerScore.textContent= `Player: ${playerPoints}`;
+    playerScore.innerHTML = `Player: ${playerPoints}`;
     let finalResult = document.getElementById('results');
-    finalResult.textContent = result;
+    finalResult.innerHTML = result;
 
     return result;
     });
@@ -122,7 +124,7 @@ function updateScore(result, score) {
         score++
     }
     return score;
-}
+};
 
 //playing one round
 function playRound(playerChoice, pcChoice) {
@@ -140,3 +142,26 @@ function playRound(playerChoice, pcChoice) {
         return "You lose!";
     }
 };
+
+//restarting the game
+function restartGame() {
+    playerPoints = 0;
+    pcPoints = 0;
+    currentRound = 1;
+  
+    let pcScore = document.getElementById('pcScore');
+    pcScore.innerHTML = `PC: ${pcPoints}`;
+    let playerScore = document.getElementById('playerScore');
+    playerScore.innerHTML = `Player: ${playerPoints}`;
+    let finalResult = document.getElementById('results');
+    finalResult.innerHTML = "Winner/Loser";
+
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+};
+
+let restartBtn = document.getElementById('restartButton');
+restartBtn.addEventListener('click', restartGame);
+
+  
