@@ -264,7 +264,7 @@ body {
     background-color: var(--dark-mode-color-3);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
 
     #button > .button {
         padding: 8px;
@@ -342,4 +342,14 @@ body {
         margin: 18px auto;
     }
 }
+
+@media (max-width: 790px) {
+    #gameboard > .gameButtons {
+        margin: auto 30px;
+    }
+
+    #gameboard > .viewboard {
+        margin: auto 60px
+    }
+} 
     
