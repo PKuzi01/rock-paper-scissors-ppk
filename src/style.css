@@ -211,13 +211,25 @@ body {
     text-shadow: var(--dark-mode-text-shadow);
 }
 
-.dark #gameboard > .viewboard > .contender {
+.dark .viewboard > .player > .contender{
     color: var(--dark-mode-color-5);
     text-shadow: var(--dark-mode-text-shadow);
 }
 
-.dark #gameboard > .viewboard > .user {
+.dark .viewboard > .player > .user {
     font-size: 100px;
+    margin: 30px auto;
+    color: var(--dark-mode-color-5);
+}
+
+.dark .viewboard > .pc > .contender{
+    color: var(--dark-mode-color-5);
+    text-shadow: var(--dark-mode-text-shadow);
+}
+
+.dark .viewboard > .pc > .user {
+    font-
+    size: 100px;
     margin: 30px auto;
     color: var(--dark-mode-color-5);
 }
