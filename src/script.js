@@ -11,9 +11,9 @@ let heading = document.getElementById(`hero`);
 let gameboard = document.getElementById(`gameboard`);
     gameboard.innerHTML =
     `<div class="gameButtons">
-    <button class="option">Rock</button>
-    <button class="option">Paper</button>
-    <button class="option">Scissors</button>
+    <button class="option" id="rock-button">Rock</button>
+    <button class="option" id="paper-button">Paper</button>
+    <button class="option" id="scissors-button">Scissors</button>
     </div>
     <div class="viewboard"> 
         <div id="player" class="player">
@@ -68,7 +68,7 @@ let scissorsIcon = `fa-regular fa-hand-peace user`; //scissor icon
 function getPCInput() {
     let iconPC = document.querySelector('#icon-pc');
     let pcInput = options[Math.floor(Math.random() * 3)];
-    console.log(pcInput);
+    
     if (pcInput === options[0]) {
         iconPC.setAttribute('class', `${rockIcon}`);
     } else if (pcInput === options[1]) {
@@ -78,6 +78,24 @@ function getPCInput() {
     }
     return pcInput;
 }
+
+let iconPlayer = document.querySelector('#icon-player');
+
+let rockButton = document.getElementById('rock-button');
+rockButton.addEventListener('click', function() {
+    iconPlayer.setAttribute('class', `${rockIcon}`);
+});
+
+let paperButton = document.getElementById('paper-button');
+paperButton.addEventListener('click', function() {
+    iconPlayer.setAttribute('class', `${paperIcon}`);
+});
+
+let scissorsButton = document.getElementById('scissors-button');
+scissorsButton.addEventListener('click', function () {
+    iconPlayer.setAttribute('class', `${scissorsIcon}`);
+});
+
 
 //calling
 getPCInput();
