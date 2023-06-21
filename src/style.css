@@ -92,7 +92,6 @@ body {
 
 #gameboard > .viewboard {
     display: grid;
-    gap: 30px;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
      margin: 10px 200px;
@@ -104,7 +103,7 @@ body {
 }
 
 #result > .results {
-    font-size: 20px;
+    font-size: 40px;
     font-family: var(--text-font);
     text-shadow: var(--light-mode-text-shadow);
     color: var(--light-mode-color-1);
