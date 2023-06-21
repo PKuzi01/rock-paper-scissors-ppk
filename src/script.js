@@ -18,18 +18,18 @@ let gameboard = document.getElementById(`gameboard`);
     <div class="viewboard"> 
         <div id="player" class="player">
             <i class="fa-solid fa-user user" id="icon-player"></i>
-            <p class="contender">Player</p>
+            <p class="contender" id="playerScore">Player</p>
         </div>
         <div id="pc" class="pc">
             <i class="fa-solid fa-user user" id="icon-pc"></i>
-            <p class="contender">PC</p>
+            <p class="contender" id="pcScore">PC</p>
         </div>
     </div>`;
 
 //result
 let results = document.getElementById(`result`);
     results.innerHTML =
-    `<p class="results">Winner/Loser</p>`;
+    `<p class="results" id="results">Winner/Loser</p>`;
 
 //restart
 let restartButton = document.getElementById(`restart`);
@@ -53,7 +53,7 @@ let footer = document.getElementById(`footer`);
 function changeTheme() {
     let body = document.querySelector('body');
     body.classList.toggle('dark')
-}
+};
 
 let themeButton = document.querySelector('.button');
 themeButton.addEventListener('click', changeTheme);
@@ -65,6 +65,7 @@ let rockIcon = `fa-regular fa-hand-back-fist user`; //rock icon
 let paperIcon = `fa-regular fa-hand user`; //paper icon
 let scissorsIcon = `fa-regular fa-hand-peace user`; //scissor icon
 
+//pc's choice
 function getPCInput() {
     let iconPC = document.querySelector('#icon-pc');
     let pcInput = options[Math.floor(Math.random() * 3)];
@@ -77,9 +78,12 @@ function getPCInput() {
         iconPC.setAttribute('class', `${scissorsIcon}`);
     }
     return pcInput;
-}
+};
 
 //player's choice
+let playerPoints = 0;
+let pcPoints = 0;
+
 function showPlayerInput(button, icon) {
     button.addEventListener('click', function() {
       const iconPlayer = document.querySelector('#icon-player');
@@ -89,9 +93,20 @@ function showPlayerInput(button, icon) {
     let playerChoice = button.id.replace("-button", "");
 
     let result = playRound(playerChoice, pcChoice);
+
+    playerPoints = updateScore(result, playerPoints);
+    pcPoints = updateScore(result, pcPoints);
+
+    let pcScore = document.getElementById('pcScore');
+    pcScore.textContent = `PC: ${pcPoints}`;
+    let playerScore = document.getElementById('playerScore');
+    playerScore.textContent= `Player: ${playerPoints}`;
+    let finalResult = document.getElementById('results');
+    finalResult.textContent = result;
+
     return result;
     });
-  }
+};
   
   let rockButton = document.getElementById('rock-button');
   let paperButton = document.getElementById('paper-button');
@@ -101,18 +116,27 @@ function showPlayerInput(button, icon) {
   showPlayerInput(paperButton, `${paperIcon}`);
   showPlayerInput(scissorsButton, `${scissorsIcon}`);
 
+//uypdating the score
+function updateScore(result, score) {
+    if (result === "You win!") {
+        score++
+    }
+    return score;
+}
+
 //playing one round
 function playRound(playerChoice, pcChoice) {
     if (playerChoice === pcChoice) {
-      console.log("It's a tie!");
+      return "It's a tie!";
     } else if (
       (playerChoice === "rock" && pcChoice === "scissors") ||
       (playerChoice === "paper" && pcChoice === "rock") ||
       (playerChoice === "scissors" && pcChoice === "paper")
     ) {
-      console.log("You win!");
+        playerPoints++;
+        return "You win!";
     } else {
-      console.log("You lose!");
+        pcPoints++;
+        return "You lose!";
     }
-  }
-//calling
+};
