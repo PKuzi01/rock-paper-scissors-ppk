@@ -67,7 +67,7 @@ body {
     letter-spacing: var(--letter-spacing);
     text-shadow: var(--light-mode-text-shadow);
     color: var(--light-mode-color-1);
-    font-size: 40px;
+    font-size: 60px;
     margin: 5px;
 }
 
