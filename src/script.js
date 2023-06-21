@@ -90,25 +90,39 @@ function showPlayerInput(button, icon) {
     button.addEventListener('click', function() {
       const iconPlayer = document.querySelector('#icon-player');
       iconPlayer.setAttribute('class', icon);
-
-    let pcChoice = getPCInput();
-    let playerChoice = button.id.replace("-button", "");
-
-    let result = playRound(playerChoice, pcChoice);
-
-    playerPoints = updateScore(result, playerPoints);
-    pcPoints = updateScore(result, pcPoints);
-
-    let pcScore = document.getElementById('pcScore');
-    pcScore.innerHTML = `PC: ${pcPoints}`;
-    let playerScore = document.getElementById('playerScore');
-    playerScore.innerHTML = `Player: ${playerPoints}`;
-    let finalResult = document.getElementById('results');
-    finalResult.innerHTML = result;
-
-    return result;
+  
+      let pcChoice = getPCInput();
+      let playerChoice = button.id.replace("-button", "");
+  
+      let result = playRound(playerChoice, pcChoice);
+  
+      playerPoints = updateScore(result, playerPoints);
+      pcPoints = updateScore(result, pcPoints);
+  
+      let pcScore = document.getElementById('pcScore');
+      pcScore.innerHTML = `PC: ${pcPoints}`;
+      let playerScore = document.getElementById('playerScore');
+      playerScore.innerHTML = `Player: ${playerPoints}`;
+  
+      let finalResult = document.getElementById('results');
+      finalResult.innerHTML = result;
+  
+      if (playerPoints === 5) {
+          rockButton.disabled = true;
+          paperButton.disabled = true;
+          scissorsButton.disabled = true;
+          finalResult.innerHTML = `Congrats! You win the game!`;
+      } else if (pcPoints === 5) {
+          rockButton.disabled = true;
+          paperButton.disabled = true;
+          scissorsButton.disabled = true;
+          finalResult.innerHTML = `Better luck next time.`;
+      }
+  
+      return result;
     });
-};
+  }
+  
   
   let rockButton = document.getElementById('rock-button');
   let paperButton = document.getElementById('paper-button');
@@ -118,7 +132,7 @@ function showPlayerInput(button, icon) {
   showPlayerInput(paperButton, `${paperIcon}`);
   showPlayerInput(scissorsButton, `${scissorsIcon}`);
 
-//uypdating the score
+//updating the score
 function updateScore(result, score) {
     if (result === "You win!") {
         score++
