@@ -1,13 +1,16 @@
-//theme button
+//UI
+//Theme Button
 let btn = document.getElementById(`button`);
     btn.innerHTML = `<button class="button">Dark/Light Theme</button>`;
-//hero
+
+//Hero
 let heading = document.getElementById(`hero`);
     heading.innerHTML = 
     `<h2>Welcome to a game of</h2>
     <h1>Rock Paper Scissors</h1>
     <h3>Play 5 rounds with the computer, and see who's smarter</h3>`;
-//gameboard
+
+//Gameboard
 let gameboard = document.getElementById(`gameboard`);
     gameboard.innerHTML =
     `<div class="gameButtons">
@@ -26,17 +29,17 @@ let gameboard = document.getElementById(`gameboard`);
         </div>
     </div>`;
 
-//result
+//Result
 let results = document.getElementById(`result`);
     results.innerHTML =
-    `<p class="results" id="results">Winner/Loser</p>`;
+    `<p class="results" id="results">Ready when you are!</p>`;
 
-//restart
+//Restart
 let restartButton = document.getElementById(`restart`);
     restartButton.innerHTML =
     `<button class="restartButton" id="restartButton">Restart game</button>`;
 
-//footer
+//Footer
 let footer = document.getElementById(`footer`);
     footer.innerHTML = 
     `<footer class="footer"> 
@@ -49,7 +52,7 @@ let footer = document.getElementById(`footer`);
     <a href="https://github.com/PKuzi01/rock-paper-scissors-ppk" target="_blank">Github</a>.
     </footer>`;
 
-//chanigng the page from dark to light mode, and vice versa
+//Dark/Light mode
 function changeTheme() {
     let body = document.querySelector('body');
     body.classList.toggle('dark')
@@ -58,14 +61,18 @@ function changeTheme() {
 let themeButton = document.querySelector('.button');
 themeButton.addEventListener('click', changeTheme);
 
-//functionality build
-//global variables
-let options = ['rock', 'paper', 'scissors'];
-let rockIcon = `fa-regular fa-hand-back-fist user`; //rock icon
-let paperIcon = `fa-regular fa-hand user`; //paper icon
-let scissorsIcon = `fa-regular fa-hand-peace user`; //scissor icon
+//Functionality + Behaviour
+//Global Variables
+const options = ['rock', 'paper', 'scissors'];
+const rockIcon = `fa-regular fa-hand-back-fist user`;
+const paperIcon = `fa-regular fa-hand user`;
+const scissorsIcon = `fa-regular fa-hand-peace user`;
+const profileIcon = `fa-solid fa-user user`;
+const rockButton = document.getElementById('rock-button');
+const paperButton = document.getElementById('paper-button');
+const scissorsButton = document.getElementById('scissors-button');
 
-//pc's choice
+//PC's choice
 function getPCInput() {
     let iconPC = document.querySelector('#icon-pc');
     let pcInput = options[Math.floor(Math.random() * 3)];
@@ -80,15 +87,14 @@ function getPCInput() {
     return pcInput;
 };
 
-//player's choice
+//Player's choice
 let playerPoints = 0;
 let pcPoints = 0;
 let currentRound = 1;
-let maxRound = 5;
 
 function showPlayerInput(button, icon) {
     button.addEventListener('click', function() {
-      const iconPlayer = document.querySelector('#icon-player');
+      let iconPlayer = document.querySelector('#icon-player');
       iconPlayer.setAttribute('class', icon);
   
       let pcChoice = getPCInput();
@@ -99,48 +105,53 @@ function showPlayerInput(button, icon) {
       playerPoints = updateScore(result, playerPoints);
       pcPoints = updateScore(result, pcPoints);
   
-      let pcScore = document.getElementById('pcScore');
-      pcScore.innerHTML = `PC: ${pcPoints}`;
-      let playerScore = document.getElementById('playerScore');
-      playerScore.innerHTML = `Player: ${playerPoints}`;
-  
-      let finalResult = document.getElementById('results');
-      finalResult.innerHTML = result;
-  
-      if (playerPoints === 5) {
-          rockButton.disabled = true;
-          paperButton.disabled = true;
-          scissorsButton.disabled = true;
-          finalResult.innerHTML = `Congrats! You win the game!`;
-      } else if (pcPoints === 5) {
-          rockButton.disabled = true;
-          paperButton.disabled = true;
-          scissorsButton.disabled = true;
-          finalResult.innerHTML = `Better luck next time.`;
-      }
-  
-      return result;
+      updateGameResults(result);
     });
   }
-  
-  
-  let rockButton = document.getElementById('rock-button');
-  let paperButton = document.getElementById('paper-button');
-  let scissorsButton = document.getElementById('scissors-button');
-  
-  showPlayerInput(rockButton, `${rockIcon}`);
-  showPlayerInput(paperButton, `${paperIcon}`);
-  showPlayerInput(scissorsButton, `${scissorsIcon}`);
 
-//updating the score
-function updateScore(result, score) {
-    if (result === "You win!") {
-        score++
+showPlayerInput(rockButton, `${rockIcon}`);
+showPlayerInput(paperButton, `${paperIcon}`);
+showPlayerInput(scissorsButton, `${scissorsIcon}`);  
+  
+//Displaying the game results
+function updateGameResults(result) {
+    let pcScore = document.getElementById('pcScore');
+    pcScore.innerHTML = `PC: ${pcPoints}`;
+
+    let playerScore = document.getElementById('playerScore');
+    playerScore.innerHTML = `Player: ${playerPoints}`;
+
+    let finalResult = document.getElementById('results');
+    finalResult.innerHTML = result;
+
+    if (playerPoints === 5) {
+        disableButtons();
+        finalResult.innerHTML = `Congrats! You win the game!`;
+    } else if (pcPoints === 5) {
+        disableButtons();
+        finalResult.innerHTML = `Better luck next time.`;
     }
+};
+  
+//Disabling the game buttons
+function disableButtons() {
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+};
+
+//Updating the score
+function updateScore(result, score) {
+    if (result === "This round's to the player!"){
+        playerScore++;
+    } else if (result === "PC takes this round.") {
+        pcScore++;
+    }
+    
     return score;
 };
 
-//playing one round
+//Playing one round
 function playRound(playerChoice, pcChoice) {
     if (playerChoice === pcChoice) {
       return "It's a tie!";
@@ -150,25 +161,34 @@ function playRound(playerChoice, pcChoice) {
       (playerChoice === "scissors" && pcChoice === "paper")
     ) {
         playerPoints++;
-        return "You win!";
-    } else {
+        return "This round's to the player!";
+    } else if (
+        (pcChoice === "rock" && playerChoice === "scissors") ||
+        (pcChoice === "paper" && playerChoice === "rock") ||
+        (pcChoice === "scissors" && playerChoice === "paper")
+    ) {
         pcPoints++;
-        return "You lose!";
+        return "PC takes this round.";
     }
 };
 
-//restarting the game
+//Restarting the game
 function restartGame() {
     playerPoints = 0;
     pcPoints = 0;
     currentRound = 1;
+
+    let iconPC = document.querySelector('#icon-pc');
+    iconPC.setAttribute('class', `${profileIcon}`);
+    let iconPlayer = document.querySelector('#icon-player');
+    iconPlayer.setAttribute('class', `${profileIcon}`);
   
     let pcScore = document.getElementById('pcScore');
     pcScore.innerHTML = `PC: ${pcPoints}`;
     let playerScore = document.getElementById('playerScore');
     playerScore.innerHTML = `Player: ${playerPoints}`;
     let finalResult = document.getElementById('results');
-    finalResult.innerHTML = "Winner/Loser";
+    finalResult.innerHTML = "Ready when you are!";
 
     rockButton.disabled = false;
     paperButton.disabled = false;
