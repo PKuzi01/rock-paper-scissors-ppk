@@ -3,7 +3,6 @@
 ## Date Completed: 22 June 2023
 
 #### Authoured by Philisizwe Kuzwayo
-#### Link to project: 
 
 ### <ins>Process Notes</ins>
 #### Wireframing
