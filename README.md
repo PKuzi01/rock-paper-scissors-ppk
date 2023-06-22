@@ -1,6 +1,6 @@
 # Project: Rock-Paper-Scissors
 ## Date Started: 12 June 2023
-## Date Completed:
+## Date Completed: 22 June 2023
 
 #### Authoured by Philisizwe Kuzwayo
 #### Link to project: 
